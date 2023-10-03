@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-function Item({ name, category }) {
+const Item = ({ name, category }) => {
   const [isInCart, setIsInCart] = useState(false);
 
-  function handleAddToCartClick() {
-    setIsInCart((isInCart) => !isInCart);
-  }
+  const handleAddToCartClick = () => setIsInCart((isInCart) => !isInCart);
 
   return (
     <li className={isInCart ? "in-cart" : ""}>
@@ -19,6 +17,6 @@ function Item({ name, category }) {
       </button>
     </li>
   );
-}
+};
 
 export default Item;
